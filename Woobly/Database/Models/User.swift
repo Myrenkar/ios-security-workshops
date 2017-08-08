@@ -11,6 +11,7 @@ struct UserModel {
     static let idKey = "id"
     static let firstNameKey = "firstName"
     static let lastNameKey = "lastName"
+    static let nicknameKey = "nick"
     static let roleKey = "role"
 }
 
@@ -19,12 +20,14 @@ final class User {
     let id: Int
     let firstName: String
     let lastName: String
+    let nickname: String
     let role: String
     
     init(row: [NSString : NSObject]) throws {
         id = try row.intFor(key: UserModel.idKey)
         firstName = try row.stringFor(key: UserModel.firstNameKey)
         lastName = try row.stringFor(key: UserModel.lastNameKey)
+        nickname = try row.stringFor(key: UserModel.nicknameKey)
         role = try row.stringFor(key: UserModel.roleKey)
     }
 }

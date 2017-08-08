@@ -42,7 +42,7 @@ final class DatabaseProvider {
         }
         
         for row in DatabaseProvider.data {
-            let _ = try db.bindQuery("INSERT INTO 'users' (nick, firstName, lastName, role) VALUES (?,?,?,?)", bindValues: [sqlStr(row[0]), sqlStr(row[1]), sqlStr(row[2]), sqlStr(row[3])])
+            let _ = try db.bindQuery("INSERT INTO 'users' (firstName, lastName, nick, role) VALUES (?,?,?,?)", bindValues: [sqlStr(row[0]), sqlStr(row[1]), sqlStr(row[2]), sqlStr(row[3])])
         }
     }
 }

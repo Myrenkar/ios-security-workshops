@@ -1,4 +1,5 @@
 PODS:
+  - SnapKit (3.2.0)
   - sqlite3 (3.19.3):
     - sqlite3/common (= 3.19.3)
   - sqlite3/common (3.19.3)
@@ -6,12 +7,14 @@ PODS:
     - sqlite3
 
 DEPENDENCIES:
+  - SnapKit (~> 3.2.0)
   - SQLiteManager
 
 SPEC CHECKSUMS:
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   sqlite3: e0f7755dc52e709215e116c801ea0c81fd45c083
   SQLiteManager: 61f056e42457db34a2550c1cee65b7fdf3118b55
 
-PODFILE CHECKSUM: fd3293f80a071ea737e643b5550ba6f89b42c7ad
+PODFILE CHECKSUM: 905b99b645691169ec2cce107ca5be75032e8939
 
 COCOAPODS: 1.2.1

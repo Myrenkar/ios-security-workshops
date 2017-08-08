@@ -14,7 +14,7 @@ final class UsersProvider {
     private let databaseProvider: DatabaseProvider
     private let db: SQLite
     
-    private var loggedInUserId: Int {
+    var loggedInUserId: Int {
         get {
             return UserDefaults.standard.integer(forKey: "loggedInUserId")
         }
@@ -22,7 +22,7 @@ final class UsersProvider {
         set {
             UserDefaults.standard.set(newValue, forKey: "loggedInUserId")
             UserDefaults.standard.synchronize()
-            loadLoggedInUser()
+            try? loadLoggedInUser()
         }
     }
     
@@ -31,7 +31,7 @@ final class UsersProvider {
     init() throws {
         databaseProvider = try DatabaseProvider()
         db = databaseProvider.db
-        loadLoggedInUser()
+        try loadLoggedInUser()
     }
     
     func all(completion: @escaping ([User]?) -> ()) {
@@ -48,7 +48,7 @@ final class UsersProvider {
     }
     
     func find(text: String, completion: @escaping ([User]?) -> ()) {
-        let statement = "SELECT * FROM users WHERE firstName LIKE '\(text)'"
+        let statement = "SELECT * FROM users WHERE firstName LIKE '%\(text)%'"
         db.query(statement, successClosure: { result in
             let users = result.results?.flatMap { row in
                 return try? User(row: row)
@@ -61,15 +61,12 @@ final class UsersProvider {
         })
     }
     
-    private func loadLoggedInUser() {
-        db.query("SELECT * FROM users WHERE `id` = \(loggedInUserId)", successClosure: {  [weak self] result in
-            let users = result.results?.flatMap { row in
-                return try? User(row: row)
-            }
-            self?.loggedInUser = users?.first
-            
-        }, errorClosure: { error in
-            print(error)
-        })
+    private func loadLoggedInUser() throws {
+        
+        let result = try db.query("SELECT * FROM users WHERE `id` = \(loggedInUserId)")
+        let users = result.results?.flatMap{ row in
+            return try? User(row: row)
+        }
+        self.loggedInUser = users?.first
     }
 }

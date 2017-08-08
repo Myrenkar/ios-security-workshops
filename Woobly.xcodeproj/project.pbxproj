@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8AE4F7D5F9A2B686078E0D9E /* Pods_Woobly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F85513BA90BD671E2C249E /* Pods_Woobly.framework */; };
+		C607D6591F3A2136000BE93C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C607D6581F3A2136000BE93C /* UserCell.swift */; };
 		C6D6B3D71F38D77C0020236A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D6B3D61F38D77C0020236A /* AppDelegate.swift */; };
 		C6D6B3DC1F38D77C0020236A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6D6B3DA1F38D77C0020236A /* Main.storyboard */; };
 		C6D6B3DE1F38D77C0020236A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D6B3DD1F38D77C0020236A /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		01F85513BA90BD671E2C249E /* Pods_Woobly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Woobly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC6290AEFF7E4FF6E7779C3 /* Pods-Woobly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Woobly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Woobly/Pods-Woobly.debug.xcconfig"; sourceTree = "<group>"; };
 		58FB62ACD407CCB948230C69 /* Pods-Woobly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Woobly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Woobly/Pods-Woobly.release.xcconfig"; sourceTree = "<group>"; };
+		C607D6581F3A2136000BE93C /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = ViewControllers/UserCell.swift; sourceTree = "<group>"; };
 		C6D6B3D31F38D77C0020236A /* Woobly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woobly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D6B3D61F38D77C0020236A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6D6B3DB1F38D77C0020236A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				C6D6B3EC1F38E79B0020236A /* UsersViewController.swift */,
+				C607D6581F3A2136000BE93C /* UserCell.swift */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				C6D6B3EA1F38D8C20020236A /* DatabaseProvider.swift in Sources */,
 				C6D6B3ED1F38E79B0020236A /* UsersViewController.swift in Sources */,
+				C607D6591F3A2136000BE93C /* UserCell.swift in Sources */,
 				C6D6B3D71F38D77C0020236A /* AppDelegate.swift in Sources */,
 				C6D6B3F21F38E8D20020236A /* User.swift in Sources */,
 				C6D6B3EF1F38E7DF0020236A /* UsersProvider.swift in Sources */,

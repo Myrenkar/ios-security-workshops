@@ -15,13 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let navigationController = UINavigationController()
         do {
             let provider = try DatabaseProvider()
             try provider.prepare()
+            let usersProvider = try UsersProvider()
+            let controller = UsersViewController(usersProvider: usersProvider)
+            navigationController.viewControllers = [controller]
 
         } catch {
             print(error)
         }
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
