@@ -26,6 +26,7 @@ final class UsersViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.identifier)
+        navigationItem.hidesBackButton = true
         setupSearchController()
         usersProvider.all { [weak self] users in
             self?.users = users

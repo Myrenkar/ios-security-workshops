@@ -1,7 +1,8 @@
 //
 //  AppDelegate.swift
-//  Woobly
+//  schemeHacker
 //
+//  Created by Marcin Siemaszko on 09.08.2017.
 //  Copyright © 2017 netguru. All rights reserved.
 //
 
@@ -15,20 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let navigationController = UINavigationController()
-        do {
-            let provider = try DatabaseProvider()
-            try provider.prepare()
-            let controller = ActivateViewController()
-            navigationController.viewControllers = [controller]
-
-        } catch {
-            print(error)
-        }
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
-        
         return true
     }
 
@@ -56,10 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Activated"), object: nil, userInfo: nil)
+        let alert = UIAlertController(title: nil, message: url.absoluteString, preferredStyle: .alert)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
         return true
     }
-
 
 }
 
