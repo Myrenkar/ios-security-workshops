@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		739EEF411F3B58D6004E8D72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739EEF401F3B58D6004E8D72 /* LoginViewController.swift */; };
+		739EEF431F3B5A13004E8D72 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739EEF421F3B5A13004E8D72 /* LoginView.swift */; };
 		8AE4F7D5F9A2B686078E0D9E /* Pods_Woobly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F85513BA90BD671E2C249E /* Pods_Woobly.framework */; };
 		C607D6591F3A2136000BE93C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C607D6581F3A2136000BE93C /* UserCell.swift */; };
 		C6BA55CF1F3B703600DA7026 /* ActivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BA55CE1F3B703600DA7026 /* ActivateViewController.swift */; };
@@ -25,6 +27,8 @@
 		01F85513BA90BD671E2C249E /* Pods_Woobly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Woobly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC6290AEFF7E4FF6E7779C3 /* Pods-Woobly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Woobly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Woobly/Pods-Woobly.debug.xcconfig"; sourceTree = "<group>"; };
 		58FB62ACD407CCB948230C69 /* Pods-Woobly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Woobly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Woobly/Pods-Woobly.release.xcconfig"; sourceTree = "<group>"; };
+		739EEF401F3B58D6004E8D72 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		739EEF421F3B5A13004E8D72 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C607D6581F3A2136000BE93C /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = ViewControllers/UserCell.swift; sourceTree = "<group>"; };
 		C6BA55CE1F3B703600DA7026 /* ActivateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivateViewController.swift; path = ViewControllers/ActivateViewController.swift; sourceTree = "<group>"; };
 		C6D6B3D31F38D77C0020236A /* Woobly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woobly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		739EEF3F1F3B5841004E8D72 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				739EEF401F3B58D6004E8D72 /* LoginViewController.swift */,
+				739EEF421F3B5A13004E8D72 /* LoginView.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		7E214826A55A2CB1293EA95B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				C6BA55CD1F3B6FFF00DA7026 /* Activate */,
+				739EEF3F1F3B5841004E8D72 /* Login */,
 				C6D6B3F51F39C9D50020236A /* Users */,
 			);
 			name = ViewControllers;
@@ -276,7 +290,9 @@
 				C607D6591F3A2136000BE93C /* UserCell.swift in Sources */,
 				C6D6B3D71F38D77C0020236A /* AppDelegate.swift in Sources */,
 				C6BA55CF1F3B703600DA7026 /* ActivateViewController.swift in Sources */,
+				739EEF411F3B58D6004E8D72 /* LoginViewController.swift in Sources */,
 				C6D6B3F21F38E8D20020236A /* User.swift in Sources */,
+				739EEF431F3B5A13004E8D72 /* LoginView.swift in Sources */,
 				C6D6B3EF1F38E7DF0020236A /* UsersProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
