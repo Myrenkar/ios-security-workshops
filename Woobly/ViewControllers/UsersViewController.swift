@@ -33,7 +33,6 @@ final class UsersViewController: UITableViewController {
             self?.tableView.reloadData()
         }
         
-        usersProvider.loggedInUserId = 7
         if usersProvider.loggedInUser?.role == "admin" {
             let barButton = UIBarButtonItem(title: "Admin", style: .done, target: nil, action: nil)
             navigationItem.rightBarButtonItem = barButton

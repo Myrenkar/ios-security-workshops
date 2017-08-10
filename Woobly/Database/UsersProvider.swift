@@ -14,7 +14,7 @@ final class UsersProvider {
     private let databaseProvider: DatabaseProvider
     private let db: SQLite
     
-    var loggedInUserId: Int {
+    static var loggedInUserId: Int {
         get {
             return UserDefaults.standard.integer(forKey: "loggedInUserId")
         }
@@ -22,7 +22,17 @@ final class UsersProvider {
         set {
             UserDefaults.standard.set(newValue, forKey: "loggedInUserId")
             UserDefaults.standard.synchronize()
-            try? loadLoggedInUser()
+        }
+    }
+    
+    static var accessToken: String? {
+        get {
+            return UserDefaults.standard.string(forKey: "accessToken")
+        }
+        
+        set {
+            UserDefaults.standard.set(newValue, forKey: "accessToken")
+            UserDefaults.standard.synchronize()
         }
     }
     
@@ -63,7 +73,7 @@ final class UsersProvider {
     
     private func loadLoggedInUser() throws {
         
-        let result = try db.query("SELECT * FROM users WHERE `id` = \(loggedInUserId)")
+        let result = try db.query("SELECT * FROM users WHERE `id` = \(UsersProvider.loggedInUserId)")
         let users = result.results?.flatMap{ row in
             return try? User(row: row)
         }

@@ -51,8 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Activated"), object: nil, userInfo: nil)
+        if url.absoluteString.contains("real_password=ai3zn2jza") {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Activated"), object: nil, userInfo: nil)
+        }
         return true
     }
 }

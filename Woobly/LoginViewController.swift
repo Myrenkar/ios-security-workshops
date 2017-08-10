@@ -35,8 +35,8 @@ final class LoginViewController: UIViewController {
             do {
                 let provider = try DatabaseProvider()
                 try provider.prepare()
-                let usersProvider = try UsersProvider()
-                usersProvider.loggedInUserId = 7
+                UsersProvider.loggedInUserId = 7
+                UsersProvider.accessToken = "8sgbeaz83bfi3na3irnah419ndjaie"
                 let controller = ActivateViewController()
                 navigationController?.pushViewController(controller, animated: true)
             } catch {

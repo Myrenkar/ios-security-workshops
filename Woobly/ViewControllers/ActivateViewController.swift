@@ -13,6 +13,7 @@ final class ActivateViewController: UIViewController {
     private let activateButton = UIButton()
     private let activatedMarkLabel = UILabel()
     private var activated = false
+    private let downloader = DataDownloader()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,13 +64,21 @@ final class ActivateViewController: UIViewController {
     
     func activateButtonTapped(_: UIButton) {
         if activated {
-            showUsersView()
+            downloadData()
         } else {
-            let alert = UIAlertController(title: "Error", message: "Account not activated", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
-            
+            showNotActivatedAccountError()
+        }
+    }
+    
+    func downloadData() {
+        downloader.downloadData { [weak self] error in
+            DispatchQueue.main.async {
+                if let _ = error {
+                    self?.showDownloadError()
+                } else {
+                    self?.showUsersView()
+                }
+            }
         }
     }
     
@@ -79,5 +88,19 @@ final class ActivateViewController: UIViewController {
         }
         let controller = UsersViewController(usersProvider: usersProvider)
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func showDownloadError() {
+        let alert = UIAlertController(title: "Error", message: "Data not downloaded", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showNotActivatedAccountError() {
+        let alert = UIAlertController(title: "Error", message: "Account not activated", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }

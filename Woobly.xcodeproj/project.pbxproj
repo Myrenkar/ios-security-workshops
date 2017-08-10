@@ -12,6 +12,7 @@
 		8AE4F7D5F9A2B686078E0D9E /* Pods_Woobly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F85513BA90BD671E2C249E /* Pods_Woobly.framework */; };
 		C607D6591F3A2136000BE93C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C607D6581F3A2136000BE93C /* UserCell.swift */; };
 		C6BA55CF1F3B703600DA7026 /* ActivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BA55CE1F3B703600DA7026 /* ActivateViewController.swift */; };
+		C6BA55D21F3CC2AD00DA7026 /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BA55D11F3CC2AD00DA7026 /* DataDownloader.swift */; };
 		C6D6B3D71F38D77C0020236A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D6B3D61F38D77C0020236A /* AppDelegate.swift */; };
 		C6D6B3DC1F38D77C0020236A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6D6B3DA1F38D77C0020236A /* Main.storyboard */; };
 		C6D6B3DE1F38D77C0020236A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D6B3DD1F38D77C0020236A /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		739EEF421F3B5A13004E8D72 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C607D6581F3A2136000BE93C /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = ViewControllers/UserCell.swift; sourceTree = "<group>"; };
 		C6BA55CE1F3B703600DA7026 /* ActivateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivateViewController.swift; path = ViewControllers/ActivateViewController.swift; sourceTree = "<group>"; };
+		C6BA55D11F3CC2AD00DA7026 /* DataDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataDownloader.swift; path = Networking/DataDownloader.swift; sourceTree = "<group>"; };
 		C6D6B3D31F38D77C0020236A /* Woobly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woobly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D6B3D61F38D77C0020236A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6D6B3DB1F38D77C0020236A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 			name = Activate;
 			sourceTree = "<group>";
 		};
+		C6BA55D01F3CC27C00DA7026 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C6BA55D11F3CC2AD00DA7026 /* DataDownloader.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		C6D6B3CA1F38D77B0020236A = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				C6D6B3D61F38D77C0020236A /* AppDelegate.swift */,
-				C6D6B3EB1F38E7780020236A /* ViewControllers */,
 				C6D6B3E81F38D8710020236A /* Database */,
+				C6BA55D01F3CC27C00DA7026 /* Networking */,
+				C6D6B3EB1F38E7780020236A /* ViewControllers */,
 				C6D6B3DA1F38D77C0020236A /* Main.storyboard */,
 				C6D6B3DD1F38D77C0020236A /* Assets.xcassets */,
 				C6D6B3DF1F38D77C0020236A /* LaunchScreen.storyboard */,
@@ -291,6 +302,7 @@
 				C6D6B3D71F38D77C0020236A /* AppDelegate.swift in Sources */,
 				C6BA55CF1F3B703600DA7026 /* ActivateViewController.swift in Sources */,
 				739EEF411F3B58D6004E8D72 /* LoginViewController.swift in Sources */,
+				C6BA55D21F3CC2AD00DA7026 /* DataDownloader.swift in Sources */,
 				C6D6B3F21F38E8D20020236A /* User.swift in Sources */,
 				739EEF431F3B5A13004E8D72 /* LoginView.swift in Sources */,
 				C6D6B3EF1F38E7DF0020236A /* UsersProvider.swift in Sources */,
