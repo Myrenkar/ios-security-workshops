@@ -28,7 +28,6 @@ final class UserCell: UITableViewCell {
     }
     
     override func updateConstraints() {
-        super.updateConstraints()
         if !didSetupConstraints {
             didSetupConstraints = true
             userNameLabel.snp.makeConstraints { make in
@@ -45,6 +44,7 @@ final class UserCell: UITableViewCell {
                 make.right.equalTo(self).offset(-20)
             }
         }
+        super.updateConstraints()
     }
     
     func setup(with user: User) {
